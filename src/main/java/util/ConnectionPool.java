@@ -16,7 +16,7 @@ public class ConnectionPool {
     private static ConnectionPool instance;
     private List<Connection> connections;
 
-    private ConnectionPool() {
+    public ConnectionPool() {
         connections = new ArrayList<>();
         initializeConnections();
     }
