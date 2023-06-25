@@ -1,0 +1,29 @@
+<!-- FlashcardMapper.xml -->
+<mapper namespace="org.example.mappers.FlashcardMapper">
+
+    <!-- SELECT ALL -->
+    <select id="getAllFlashcards" resultType="org.example.model.Flashcard">
+        SELECT * FROM flashcards
+    </select>
+
+    <!-- SELECT BY ID -->
+    <select id="getFlashcardById" resultType="org.example.model.Flashcard">
+        SELECT * FROM flashcards WHERE id = #{id}
+    </select>
+
+    <!-- INSERT -->
+    <insert id="insertFlashcard" parameterType="org.example.model.Flashcard">
+        INSERT INTO flashcards (question, answer) VALUES (#{question}, #{answer})
+    </insert>
+
+    <!-- UPDATE -->
+    <update id="updateFlashcard" parameterType="org.example.model.Flashcard">
+        UPDATE flashcards SET question = #{question}, answer = #{answer} WHERE id = #{id}
+    </update>
+
+    <!-- DELETE -->
+    <delete id="deleteFlashcard" parameterType="int">
+        DELETE FROM flashcards WHERE id = #{id}
+    </delete>
+
+</mapper>
